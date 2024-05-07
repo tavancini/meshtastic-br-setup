@@ -40,9 +40,9 @@
       <!-- PASSO 5 -->
       <h2>Passo 5</h2>
       <p>Pressione o botão abaixo e aguarde o processo terminar:</p>
+      <p class="status-message" v-html="statusMessage"></p>
       <button type="button" @click="initSetup">Salvar</button>
 
-      <p class="status-message" v-html="statusMessage"></p>
     </fieldset>
   </main>
 </template>
@@ -89,8 +89,14 @@ const updateStatus = async (message:string) => {
 };
 
 const connect = async () => {
-  const port: SerialPort = await navigator.serial.requestPort();
+  let port: SerialPort = null;
 
+  try {
+    port = await navigator.serial.requestPort();
+  } catch(e) {
+    return;
+  }
+  
   connection = client.createSerialConnection();
   await connection
     .connect({
