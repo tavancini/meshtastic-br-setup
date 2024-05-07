@@ -1,32 +1,29 @@
-# meshtastic-br-setup
+# Meshtastic BR Setup
 
-This template should help get you started developing with Vue 3 in Vite.
+Interface web que facilita a configuração inicial de um dispositivo LoRa para ingressar à rede Meshtastic do Brasil.
 
-## Recommended IDE Setup
+## A ferramenta fará a seguinte configuração:
+1. Nome e código do dispositivo.
+2. Região: `ANZ`.
+3. Bluetooth será desativado.
+4. WiFi será ativado, junto com a definição do nome da rede e senha.
+5. Posicionamento dinâmico ou fixo (com altitude, latitude e longitude).
+6. Configuração do servidor MQTT do Brasil ([https://www.meshbrasil.com](https://www.meshbrasil.com/)).
+7. Configuração de uplink e downlink do canal primário para enviar mensagens entre o servidor MQTT e a rede mesh.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
+## Setup do projeto
+1. Instale as dependências:
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+2. Para desenvolver localmente, execute:
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+3. Para gerar os arquivos estáticos (HTML, CSS e Js), execute:
 
 ```sh
 npm run build
