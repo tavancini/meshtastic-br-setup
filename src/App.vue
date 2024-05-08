@@ -244,7 +244,7 @@ const initSetup = async () => {
           break;
 
         /////////////////////////////////////////////////////////////////////////
-        case 4: // Primatey Channel & MQTT
+        case 4: // Primary Channel & MQTT
           updateStatus('Configurando canal primário...');
           const primaryChannelData = new Protobuf.Channel.Channel({
             ...devicePrimaryChannel.value,
